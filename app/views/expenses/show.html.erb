@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @expense.type %>
+  <strong>Category:</strong>
+  <%= @expense.category %>
 </p>
 
 <p>
@@ -10,5 +10,5 @@
   <%= @expense.amount %>
 </p>
 
-<%= link_to 'Edit', edit_user_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
+<%= link_to 'Edit', edit_user_expense_path(@user, @expense) %> |
+<%= link_to 'Back', user_expenses_path %>

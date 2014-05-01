@@ -11,11 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501135757) do
+ActiveRecord::Schema.define(version: 20140501171030) do
+
+  create_table "assignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assignments", ["group_id"], name: "index_assignments_on_group_id"
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
 
   create_table "expenses", force: true do |t|
-    t.string   "type"
+    t.string   "category"
     t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
